@@ -120,3 +120,10 @@ Siempre seguir este orden para evitar dependencias rotas:
 - infra-monitor (status de GitHub/Vercel)
 - neon-brain (memoria persistente)
 - sync-protocol (coordinacion entre agentes)
+
+
+## REGLA CRITICA DNS (name.com)
+Al crear DNS records en name.com, el host es SOLO el subdominio:
+- CORRECTO: clerk, accounts, send, resend._domainkey
+- INCORRECTO: clerk.dominio.com, accounts.dominio.com
+Verificar SIEMPRE con `dig` despues de crear records.
