@@ -62,3 +62,27 @@ Para ver que esta pasando en Clerk:
 2. base64 encode y retornar via relay
 3. Guardar como .png y view para inspeccionar
 Sin vision, los clicks ciegos fallan.
+
+
+## Crear Webhook (via Svix Portal)
+La API de Clerk NO tiene endpoint para crear webhooks. Usar Svix portal:
+
+1. Obtener Svix URL:
+   curl -s -X POST 'https://api.clerk.com/v1/webhooks/svix_url' -H 'Authorization: Bearer {SK_LIVE}'
+   Retorna: {"svix_url":"https://app.svix.com/login?...#key=BASE64_TOKEN"}
+
+2. Playwright abre svix_url (token expira rapido, actuar inmediato)
+
+3. Click "Add Endpoint"
+
+4. Fill URL: https://{DOMAIN}/api/webhooks/clerk
+
+5. Scroll down + Click "Create"
+
+6. El secret (whsec_) aparece en la pagina del endpoint, al lado de "Signing Secret"
+   - Click el icono de ojo para revelar
+   - El secret se captura via regex en page.text_content('body')
+
+7. Inyectar CLERK_WEBHOOK_SIGNING_SECRET en Vercel via API
+
+Pattern: Svix tokens son one-time y expiran rapido. Hacer TODO en un solo script sin pausas largas.
