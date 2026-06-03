@@ -325,6 +325,24 @@ Mantener mentalmente para conversaciones de varios turnos:
 
 ---
 
+## Skills complementarias
+
+### `demo-pwa-builder` (skill separada)
+
+Cuando Luis dice "convertir en demo", "PWA para vender", "transformar este Stitch",
+"presentación al cliente", o cuando el repo activo contiene archivos crudos de
+Google Stitch / Figma Make / v0 / lovable / bolt → **activar la skill
+`demo-pwa-builder`** en lugar de ejecutar acciones genéricas.
+
+Esa skill encapsula su flujo de ventas: Stitch → repo → Vercel → demo PWA
+con 3 modos navegables (público / usuario / admin) + toggle flotante + datos
+demo plausibles + animaciones que cierran. Diseñada para presentar al
+prospecto y cerrar en una sola sesión de 5-10 min.
+
+No reemplaza esta skill — corre en paralelo cuando aplica el contexto de demo.
+
+---
+
 ## Archivos de referencia
 
 - `references/projects.md` — Detalle expandido de cada proyecto con IDs, dominios y estado
