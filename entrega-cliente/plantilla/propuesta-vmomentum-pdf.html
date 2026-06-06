@@ -121,6 +121,28 @@ h2{border-left:2.5mm solid #2563eb;padding-left:5mm}
 .next .nx p{font-size:8.5pt;color:#aab3c5}
 .contactbox{background:linear-gradient(90deg,#2563eb,#06b6d4);border-radius:4mm;padding:7mm;margin-top:8mm}
 .contactbox p{font-size:10pt;color:#e0f2fe}
+
+/* CONTRATO MEMBRETADO */
+@page contrato{size:A4;margin:34mm 18mm 24mm 18mm;
+  @top-left{content:element(membrete)}
+  @bottom-center{content:element(piecontrato)}}
+.ctr{page:contrato}
+.membrete{position:running(membrete);width:174mm}
+.membrete .mline{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:2.5mm;border-bottom:1.2pt solid #2563eb}
+.membrete .mb{font-size:13pt;font-weight:bold;color:#0e1b33}
+.membrete .mb span{color:#06b6d4}
+.membrete .mr{font-size:7.5pt;letter-spacing:2px;text-transform:uppercase;color:#5b6473}
+.membrete .grad{height:1mm;background:linear-gradient(90deg,#2563eb,#06b6d4);margin-top:0.8mm;border-radius:1mm}
+.piecontrato{position:running(piecontrato);width:174mm;text-align:center;font-size:7.5pt;color:#8a93a6;border-top:0.5pt solid #d8d4c8;padding-top:2mm}
+.ctr h3{font-size:14pt;color:#0e1b33}
+.cl{padding-left:4mm;border-left:0.8pt solid #e3e7ef;margin-bottom:6mm}
+.cl h5{font-size:10pt}
+.ctrcover{background:#f7f8fb;border:1px solid #e3e7ef;border-radius:4mm;padding:8mm;margin-bottom:8mm;text-align:center}
+.ctrcover .sello{display:inline-block;border:1.5pt solid #2563eb;color:#2563eb;border-radius:999px;padding:2mm 6mm;font-size:8pt;letter-spacing:2px;text-transform:uppercase;font-weight:bold;margin-top:3mm}
+
+/* HERO REMATE */
+.final .herobtn{display:block;background:linear-gradient(90deg,#2563eb,#06b6d4);color:#fff;text-align:center;font-size:16pt;font-weight:bold;padding:8mm;border-radius:5mm;margin-top:10mm;letter-spacing:1px}
+.final .herosub{text-align:center;font-size:9.5pt;color:#aab3c5;margin-top:3mm}
 </style>
 </head>
 <body>
@@ -330,20 +352,4 @@ h2{border-left:2.5mm solid #2563eb;padding-left:5mm}
   <h2 style="font-size:14pt;margin-top:8mm">¿Quiere subirla a las tiendas?</h2>
   <p style="font-size:9pt;color:#5b6473;margin-bottom:3mm">Opcional, una vez terminada su app. Sujeto a los tiempos de revisión de Apple y Google.</p>
   <div class="stores">
-    <div class="store"><img src="icons/appstore.svg"/><div class="p">$5,000</div><b>App Store (iOS)</b><br><small>Cuenta, empaquetado, revisión y publicación. Sujeto a tiempos de Apple.</small></div>
-    <div class="store"><img src="icons/googleplay.svg"/><div class="p">$3,000</div><b>Google Play (Android)</b><br><small>Cuenta, empaquetado, revisión y publicación. Sujeto a tiempos de Google.</small></div>
-  </div>
-
-</div>
-
-<!-- CONTRATO -->
-<div class="page ctr">
-  <h3>CONTRATO DE PRESTACIÓN DE SERVICIOS<br>DESARROLLO DE APLICACIÓN WEB PROGRESIVA (PWA)</h3>
-  <div class="sub">All Global Holding LLC · VMomentum</div>
-
-  <div class="cl"><h5>Declaraciones</h5>
-  <p>En la ciudad de <span class="bl"></span>, a <span class="bl" style="min-width:30mm"></span> de <span class="bl" style="min-width:30mm"></span> de 20<span class="bl" style="min-width:10mm"></span>, las partes que se identifican a continuación celebran el presente contrato de prestación de servicios para el desarrollo de la aplicación web progresiva (PWA) denominada <span class="bl"></span> (en lo sucesivo "LA PLATAFORMA").</p>
-  </div>
-
-  <div class="cl"><h5>A. Del Prestador de Servicios</h5>
-  <p>Comparece el C. <b>LUIS HUMBERTO DE LA TORRE HERRERA</b>, en su carácter de Representante Legal y Delegado Autorizado de <b>ALL GLOBAL HOLDING LLC</b>, sociedad debidamente constituida bajo las leyes del estado de Delaware, Estados Unidos de América, con plena capacidad para celebrar contratos y obligarse en los términos del presente instrumento; en lo sucesivo denominado «EL PRESTADOR». EL PRESTADOR declara contar con la capacidad técnica, recursos humanos y materiales necesarios para llevar
+    <div class="store"><img src="icons/appstore.svg"/><div class="p">$5,000</div><b>App Store (iOS)<
