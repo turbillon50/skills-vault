@@ -29,8 +29,10 @@ Logo, paleta, tipografia, mockups, aplicacion movil, dashboard, experiencia visu
 
 PROHIBIDO reportar por WhatsApps sueltos, audios o mensajes aislados. Cada proyecto tiene su **Centro de Proyecto**: `proyecto.vmomentum.site/<cliente>` con: estado, porcentaje, pendientes, entregables, historial, comentarios, archivos.
 
-## Reglas de ejecucion
+## REPORTES AUTOMATICOS (Resend)
 
-- El micrositio del dossier es una app VForge mas: cumple manifiesto-app (mobile first, dark mode, hero, velocidad) — es la primera impresion de calidad.
-- El Centro de Proyecto se alimenta del brain (client_project_status) para que estado/porcentaje sean reales, no escritos a mano.
-- Encadena con: [vforge-method] (esta fase vive entre F2-demo y F3-contrato), [manifiesto-app] (calidad de la demo y del dossier), [contrato-pwa].
+Cada cambio de estado del proyecto genera un CORREO AUTOMATICO via Resend (desde dominio propio verificado). Formato ejemplo: "Proyecto APSUS — Estado actualizado. 72%. Modulo CRM completado. Modulo Cobranza en progreso. Fecha estimada: 15 junio." Trigger: update en client_project_status del brain → correo al cliente + link a su Centro de Proyecto.
+
+## ONBOARDING POST-FIRMA (automatico)
+
+Una vez firmado el contrato,
