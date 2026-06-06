@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+@page{size:A4;margin:0}
+@page contenido{margin:22mm 16mm 20mm 16mm}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Helvetica,Arial,sans-serif;color:#13203a;font-size:10.5pt;line-height:1.55}
+.page{page:contenido;page-break-after:always}
+.page:last-child{page-break-after:auto}
+
+/* COVER */
+.cover{page:auto;width:210mm;height:296mm;background:#0e1b33;color:#fff;padding:24mm 20mm;page-break-after:always;position:relative}
+.cover .stripe{position:absolute;top:0;left:0;width:210mm;height:5mm;background:linear-gradient(90deg,#2563eb,#06b6d4)}
+.cover .brand{font-size:20pt;font-weight:bold;letter-spacing:1px}
+.cover .brand span{color:#06b6d4}
+.cover .edition{color:#8fa0bd;font-size:9pt;letter-spacing:3px;text-transform:uppercase;margin-top:2mm}
+.cover h1{font-size:38pt;line-height:1.08;margin-top:38mm;font-weight:bold}
+.cover h1 .blue{color:#7dd3fc}
+.cover .sub{color:#b9c4d8;font-size:12.5pt;margin-top:8mm;width:140mm}
+.cover .fields{margin-top:30mm;border-top:1px solid #2c3c5c;padding-top:8mm}
+.cover .field{margin-bottom:6mm;font-size:11pt}
+.cover .field .lbl{color:#8fa0bd;font-size:8.5pt;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:1.5mm}
+.cover .blank{display:inline-block;width:120mm;border-bottom:1px solid #50617f;height:6mm}
+.cover .foot{position:absolute;bottom:16mm;left:20mm;color:#8fa0bd;font-size:8.5pt}
+
+/* SHARED */
+.kick{color:#2563eb;font-size:8.5pt;letter-spacing:3px;text-transform:uppercase;font-weight:bold;margin-bottom:3mm}
+h2{font-size:21pt;line-height:1.15;margin-bottom:4mm;color:#0e1b33}
+.lead{color:#5b6473;font-size:11pt;margin-bottom:8mm}
+.icon{width:9mm;height:9mm;background:#eaf1fe;border-radius:50%;padding:2mm;margin-bottom:3mm}
+.icon svg{width:5mm;height:5mm}
+
+/* CARDS */
+.row{display:flex;gap:5mm;margin-bottom:5mm}
+.card{flex:1;background:#f7f8fb;border:1px solid #e3e7ef;border-radius:4mm;padding:6mm}
+.card h4{font-size:11.5pt;margin-bottom:1.5mm}
+.card p{font-size:9pt;color:#5b6473}
+.bignum{font-size:20pt;font-weight:bold;color:#2563eb}
+
+/* FASES */
+.fase{display:flex;gap:4mm;padding:3mm 0;border-bottom:0.4pt solid #e3e7ef}
+.fase .n{width:9mm;height:9mm;border-radius:50%;background:#0e1b33;color:#fff;font-weight:bold;text-align:center;line-height:9mm;font-size:10pt;flex-shrink:0}
+.fase b{font-size:10.5pt}
+.fase p{font-size:9pt;color:#5b6473}
+
+/* PROPIEDAD / DESPLIEGUE */
+.own{display:flex;gap:5mm;margin-top:5mm}
+.own .box{flex:1;border:1px solid #e3e7ef;border-radius:4mm;padding:5mm;background:#fff}
+.own .box h5{font-size:10pt;margin-bottom:1mm;color:#0e1b33}
+.own .box p{font-size:8.5pt;color:#5b6473}
+.flow{background:#0e1b33;border-radius:4mm;color:#fff;padding:6mm;margin-top:6mm;text-align:center}
+.flow .step{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:3mm;padding:3mm 4mm;font-size:8.5pt;margin:0 1mm}
+.flow .arr{display:inline-block;color:#7dd3fc;font-size:11pt;margin:0 1mm}
+
+/* INTEGRACIONES */
+.intgrid{display:flex;flex-wrap:wrap;gap:4mm}
+.int{width:54mm;background:#f7f8fb;border:1px solid #e3e7ef;border-radius:3.5mm;padding:4.5mm}
+.int .tag{font-size:7pt;letter-spacing:2px;text-transform:uppercase;color:#2563eb;font-weight:bold}
+.int h4{font-size:10.5pt;margin:1mm 0}
+.int p{font-size:8pt;color:#5b6473}
+
+/* INVERSION */
+.price{font-size:34pt;font-weight:bold;color:#0e1b33}
+.stage{display:flex;justify-content:space-between;align-items:center;border:1px solid #e3e7ef;border-radius:3.5mm;padding:5mm 6mm;margin-bottom:3.5mm;background:#fff}
+.stage .t{font-weight:bold;font-size:11pt}
+.stage .d{font-size:8.5pt;color:#5b6473;margin-top:0.5mm;width:120mm}
+.stage .p{font-size:15pt;font-weight:bold;white-space:nowrap}
+.stage.free{background:#ecfdf5;border-color:#a7f3d0}
+.stage.free .p{color:#059669}
+.stores{display:flex;gap:5mm;margin-top:4mm}
+.store{flex:1;background:#f7f8fb;border:1px solid #e3e7ef;border-radius:3.5mm;padding:5mm}
+.store .p{font-size:16pt;font-weight:bold}
+.store small{font-size:8pt;color:#5b6473}
+
+/* CONTRATO */
+.ctr h3{text-align:center;font-size:13pt;margin-bottom:1mm}
+.ctr .sub{text-align:center;font-size:8pt;color:#5b6473;letter-spacing:2px;text-transform:uppercase;margin-bottom:7mm}
+.cl{margin-bottom:5mm}
+.cl h5{font-size:9.5pt;color:#2563eb;text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5mm}
+.cl p,.cl li{font-size:9pt;color:#2c3445;text-align:justify}
+.cl ul{padding-left:5mm}
+.cl table{width:100%;border-collapse:collapse;margin:2mm 0;font-size:9pt}
+.cl th{background:#0e1b33;color:#fff;padding:2.5mm;text-align:left;font-size:8.5pt}
+.cl td{border:0.4pt solid #cdd4e0;padding:2.5mm}
+.bl{display:inline-block;min-width:55mm;border-bottom:0.6pt solid #8a93a6}
+.sigs{display:flex;gap:14mm;margin-top:16mm;text-align:center}
+.sigs .s{flex:1}
+.sigs .ln{border-top:0.8pt solid #13203a;padding-top:2mm;font-size:8.5pt;color:#5b6473}
+.foot{position:running(footer)}
+h2{border-left:2.5mm solid #2563eb;padding-left:5mm}
+.cert{background:linear-gradient(135deg,#009ee3 0%,#0e1b33 100%);color:#fff;border-radius:4mm;padding:7mm;margin-top:7mm;display:flex;gap:6mm;align-items:center}
+.cert .badge{width:22mm;height:22mm;background:#fff;border-radius:50%;flex-shrink:0;text-align:center;line-height:22mm;font-size:9pt;font-weight:bold;color:#009ee3}
+.cert h4{font-size:13pt;margin-bottom:1mm}
+.cert p{font-size:9pt;color:#dbeafe}
+.cert .id{font-family:monospace;font-size:8pt;background:rgba(255,255,255,.15);padding:1.5mm 3mm;border-radius:2mm;display:inline-block;margin-top:2mm}
+.mcpgrid{display:flex;gap:4mm;margin-top:5mm}
+.mcp{flex:1;background:#0e1b33;color:#fff;border-radius:3.5mm;padding:5mm}
+.mcp .tag{font-size:7pt;letter-spacing:2px;text-transform:uppercase;color:#7dd3fc;font-weight:bold}
+.mcp h4{font-size:11pt;margin:1mm 0;color:#fff}
+.mcp p{font-size:8pt;color:#aab3c5}
+.highlight{background:linear-gradient(90deg,#2563eb,#06b6d4);color:#fff;border-radius:4mm;padding:6mm 7mm;margin-top:6mm}
+.highlight b{font-size:11.5pt}
+.highlight p{font-size:9pt;color:#e0f2fe;margin-top:1mm}
+.cl{page-break-inside:avoid}
+.int{page-break-inside:avoid;position:relative}
+.int img{width:6mm;height:6mm;margin-bottom:1.5mm}
+.mono{width:6mm;height:6mm;border-radius:2mm;background:#0e1b33;color:#fff;font-size:8pt;font-weight:bold;text-align:center;line-height:6mm;margin-bottom:1.5mm}
+.int .url{font-size:7pt;color:#2563eb;margin-top:1mm}
+.store img{width:8mm;height:8mm;margin-bottom:2mm}
+.ctrflow{page:contenido}
+.final{width:210mm;height:296mm;background:#0e1b33;color:#fff;padding:26mm 22mm;position:relative;page-break-before:always}
+.final .stripe2{position:absolute;top:0;left:0;width:210mm;height:5mm;background:linear-gradient(90deg,#2563eb,#06b6d4)}
+.final h2{color:#fff;border-left-color:#06b6d4}
+.final .lead{color:#b9c4d8}
+.next{display:flex;gap:5mm;margin:10mm 0}
+.next .nx{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:4mm;padding:6mm}
+.next .nx .n2{font-size:18pt;font-weight:bold;color:#7dd3fc}
+.next .nx b{font-size:10.5pt;display:block;margin:1mm 0}
+.next .nx p{font-size:8.5pt;color:#aab3c5}
+.contactbox{background:linear-gradient(90deg,#2563eb,#06b6d4);border-radius:4mm;padding:7mm;margin-top:8mm}
+.contactbox p{font-size:10pt;color:#e0f2fe}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="stripe"></div>
+  <div class="brand">V<span>Momentum</span></div>
+  <div class="edition">Propuesta de proyecto · Dossier oficial</div>
+  <h1>Su próxima app,<br><span class="blue">hecha como se debe.</span></h1>
+  <p class="sub">Quiénes somos, cómo trabajamos, qué cuesta, por qué su app es 100% suya — y el contrato completo. Todo en un solo documento, sin letras chiquitas.</p>
+  <div class="fields">
+    <div class="field"><span class="lbl">Preparado para</span><span class="blank"></span></div>
+    <div class="field"><span class="lbl">Proyecto</span><span class="blank"></span></div>
+    <div class="field"><span class="lbl">Fecha</span><span class="blank" style="width:60mm"></span></div>
+  </div>
+  <div class="foot">VMomentum · All Global Holding LLC · vmomentums.info</div>
+</div>
+
+<!-- PAGE: BIENVENIDA + QUIENES SOMOS -->
+<div class="page">
+  <div class="kick">Bienvenida</div>
+  <h2>Gracias por sentarse a la mesa con nosotros.</h2>
+  <p class="lead">Escuchamos su operación, entendimos su problema y construimos algo antes de pedirle un solo peso: una <b>demo funcional</b> de su plataforma, instalable en su teléfono. Este documento tiene todo lo que necesita para decidir.</p>
+
+  <div class="kick" style="margin-top:8mm">Quiénes somos</div>
+  <h2 style="font-size:17pt">VForge: una fábrica de software. Y de confianza.</h2>
+  <p class="lead">VMomentum (All Global Holding LLC) opera <b>VForge</b>, nuestra fábrica de aplicaciones con infraestructura propia, método documentado y plataformas construidas en fintech, logística, retail, contabilidad fiscal, salud y entretenimiento.</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+      <div class="bignum">17+</div><h4>Plataformas construidas</h4>
+      <p>Microcréditos, logística, e-commerce, fiscal automatizado, marketplaces y más.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div class="bignum">9</div><h4>Fases con candado</h4>
+      <p>Lo que pasa una fase de calidad queda asegurado y no se rompe después.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+      <div class="bignum">3</div><h4>Evidencias por entrega</h4>
+      <p>Visual, funcional y operativa — funcionando en producción. Es nuestra regla de oro.</p>
+    </div>
+  </div>
+
+  <div class="flow">
+    <b style="font-size:11pt">Nuestra promesa:</b><br><br>
+    <span class="step">Usted lo imagina</span><span class="arr">→</span>
+    <span class="step">Nosotros lo construimos</span><span class="arr">→</span>
+    <span class="step">Usted lo ve funcionar</span><span class="arr">→</span>
+    <span class="step">Entonces paga</span>
+  </div>
+
+  <div class="cert">
+    <div class="badge">CERTIFIED</div>
+    <div>
+      <h4>Integrador Certificado · Mercado Pago Developers</h4>
+      <p>VMomentum aprobó la certificación oficial de desarrolladores de Mercado Pago (Checkout Pro). Esto significa que sus cobros se integran bajo los estándares oficiales de la plataforma de pagos más grande de Latinoamérica — con webhooks verificados y flujo de pago auditado.</p>
+      <span class="id">Integrator ID: dev_3e409f8f614311f197f886b7d357c539</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: TECNOLOGIA MCP -->
+<div class="page">
+  <div class="kick">Tecnología de punta</div>
+  <h2>Operamos con MCP: el nuevo estándar de la industria.</h2>
+  <p class="lead"><b>¿Qué es MCP?</b> El Model Context Protocol es el protocolo abierto (creado por Anthropic, la empresa detrás de Claude) que permite que la inteligencia artificial se conecte de forma segura y directa con herramientas y servicios reales. Es el "USB de la IA": el mismo conector estándar que están adoptando las plataformas más grandes del mundo.</p>
+
+  <p class="lead" style="margin-bottom:4mm"><b>¿Por qué es tan poderoso?</b> Porque los gigantes de la industria ya publicaron sus propios MCP oficiales — y nosotros operamos con ellos todos los días:</p>
+
+  <div class="mcpgrid">
+    <div class="mcp"><span class="tag">Pagos</span><h4>Stripe MCP</h4><p>La IA gestiona pagos, suscripciones y facturación directamente sobre la plataforma oficial de Stripe.</p></div>
+    <div class="mcp"><span class="tag">Infraestructura</span><h4>Vercel MCP</h4><p>Despliegues, dominios y monitoreo de su app operados con el MCP oficial de Vercel.</p></div>
+    <div class="mcp"><span class="tag">Código</span><h4>GitHub MCP</h4><p>El código de su proyecto versionado, auditado y gestionado con el MCP oficial de GitHub.</p></div>
+  </div>
+
+  <div class="mcpgrid">
+    <div class="mcp"><span class="tag">Por qué le conviene</span><h4>Velocidad de fábrica</h4><p>Con MCP, nuestra fábrica construye, despliega y monitorea con automatización de nivel industrial: menos errores humanos, entregas más rápidas.</p></div>
+    <div class="mcp"><span class="tag">Por qué le conviene</span><h4>Estándares oficiales</h4><p>No usamos atajos ni integraciones "hechizas": cada servicio se opera por su canal oficial, auditado por el propio proveedor.</p></div>
+    <div class="mcp"><span class="tag">Por qué le conviene</span><h4>Su app, lista para IA</h4><p>Las apps que construimos nacen preparadas para conectarse con los asistentes de IA que sus clientes ya usan.</p></div>
+  </div>
+
+  <div class="highlight">
+    <b>🚀 Y lo que viene: VMomentum será MCP.</b>
+    <p>Estamos en proceso de publicar nuestro propio MCP en los marketplaces oficiales. Eso significa que las plataformas que construimos podrán ser operadas directamente por inteligencia artificial — y nuestros clientes estarán en la primera fila de esa ola.</p>
+  </div>
+</div>
+
+<!-- PAGE: METODO -->
+<div class="page">
+  <div class="kick">Nuestro método</div>
+  <h2>De la idea a producción, por fases verificadas.</h2>
+  <p class="lead">Cada fase tiene una compuerta de calidad medible. Usted ve avanzar su proyecto fase por fase en su Centro de Proyecto, con reportes automáticos a su correo.</p>
+
+  <div class="fase"><div class="n">0</div><div><b>Discovery</b><p>Entendemos su negocio y su problema real. Alcance claro por escrito.</p></div></div>
+  <div class="fase"><div class="n">1</div><div><b>Demo navegable — GRATIS</b><p>La experiencia visual completa de su app, instalable en su teléfono.</p></div></div>
+  <div class="fase"><div class="n">2</div><div><b>Diseño y arquitectura</b><p>Identidad visual, flujo de pantallas y arquitectura técnica.</p></div></div>
+  <div class="fase"><div class="n">3</div><div><b>Construcción del núcleo</b><p>Base de datos real, cuentas de usuario y panel administrativo.</p></div></div>
+  <div class="fase"><div class="n">4</div><div><b>Integraciones</b><p>Pagos, correo, mapas, facturación, WhatsApp — según su catálogo.</p></div></div>
+  <div class="fase"><div class="n">5</div><div><b>Pruebas con usuarios reales</b><p>Testers + usted y su equipo usando la plataforma de verdad.</p></div></div>
+  <div class="fase"><div class="n">6</div><div><b>Producción</b><p>Su dominio, su app instalable, monitoreo de salud y reportes automáticos.</p></div></div>
+  <div class="fase"><div class="n">7</div><div><b>Entrega y manual</b><p>Manual premium con dominios, accesos, integraciones y soporte.</p></div></div>
+  <div class="fase"><div class="n">8</div><div><b>Stores (opcional)</b><p>Publicación en App Store y Google Play, sujeta a sus tiempos de revisión.</p></div></div>
+
+  <div class="row" style="margin-top:7mm">
+    <div class="card"><h4>📊 Centro de Proyecto</h4><p>Portal exclusivo con avance, pendientes, entregables e historial.</p></div>
+    <div class="card"><h4>✉️ Reportes automáticos</h4><p>Cada avance le llega por correo, sin que tenga que preguntar.</p></div>
+    <div class="card"><h4>📘 Manual de entrega</h4><p>Todos sus accesos, dominios e integraciones, documentados.</p></div>
+  </div>
+</div>
+
+<!-- PAGE: POR QUE ES SUYO / DONDE SE DESPLIEGA -->
+<div class="page">
+  <div class="kick">Propiedad y despliegue</div>
+  <h2>Su app es 100% suya. Así de claro.</h2>
+  <p class="lead">A diferencia de las plataformas "rentadas" (donde si deja de pagar, pierde todo), nosotros construimos sobre infraestructura <b>a su nombre</b>. Al liquidar, usted tiene las llaves de todo:</p>
+
+  <div class="own">
+    <div class="box">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div>
+      <h5>Su dominio</h5><p>www.suempresa.com registrado a su nombre. Es su dirección en internet, para siempre.</p>
+    </div>
+    <div class="box">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+      <h5>Su código fuente</h5><p>El código de su aplicación queda en un repositorio entregado a usted. Nadie se lo puede quitar.</p>
+    </div>
+  </div>
+  <div class="own">
+    <div class="box">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+      <h5>Su base de datos</h5><p>Sus clientes, ventas y operación viven en una base de datos empresarial con respaldos, de su propiedad.</p>
+    </div>
+    <div class="box">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
+      <h5>Sus accesos</h5><p>Todas las cuentas y contraseñas se entregan en el Manual de Entrega. Usted manda.</p>
+    </div>
+  </div>
+
+  <div class="kick" style="margin-top:9mm">¿Dónde vive su aplicación?</div>
+  <p class="lead" style="margin-bottom:4mm">Se despliega en infraestructura de clase mundial — la misma que usan empresas globales:</p>
+  <div class="flow">
+    <span class="step">📱 Sus usuarios<br>teléfono / web</span><span class="arr">→</span>
+    <span class="step">⚡ Vercel<br>servidores globales</span><span class="arr">→</span>
+    <span class="step">🗄 Neon<br>base de datos</span><span class="arr">→</span>
+    <span class="step">🔗 Integraciones<br>pagos, correo, mapas</span>
+  </div>
+  <p style="font-size:8.5pt;color:#5b6473;margin-top:3mm">Esto significa: velocidad mundial, certificado de seguridad (candado SSL), respaldos automáticos y disponibilidad 24/7 — sin que usted compre ni mantenga un solo servidor.</p>
+</div>
+
+<!-- PAGE: CATALOGO 1 -->
+<div class="page">
+  <div class="kick">Catálogo de integraciones · 1 de 2</div>
+  <h2>Conectamos su app con el mundo real.</h2>
+  <p class="lead">Integraciones profesionales con proveedores de clase mundial. Cada una con su sitio oficial para que usted la revise:</p>
+  <div class="intgrid">
+    <div class="int"><img src="icons/clerk.svg"/><span class="tag">Identidad</span><h4>Clerk</h4><p>Registro y login seguros: correo, Google, Apple. Roles por usuario.</p><div class="url">clerk.com</div></div>
+    <div class="int"><img src="icons/neon.svg"/><span class="tag">Datos</span><h4>Neon Postgres</h4><p>Base de datos empresarial con respaldos automáticos.</p><div class="url">neon.tech</div></div>
+    <div class="int"><img src="icons/mercadopago.svg"/><span class="tag">Pagos MX · Certificados</span><h4>Mercado Pago</h4><p>Tarjeta, OXXO y transferencia. Checkout Pro con certificación oficial.</p><div class="url">mercadopago.com.mx</div></div>
+    <div class="int"><img src="icons/stripe.svg"/><span class="tag">Pagos Global</span><h4>Stripe</h4><p>Pagos internacionales, suscripciones y facturación recurrente.</p><div class="url">stripe.com</div></div>
+    <div class="int"><img src="icons/resend.svg"/><span class="tag">Correo</span><h4>Resend</h4><p>Correos desde su propio dominio: bienvenidas, avisos, reportes.</p><div class="url">resend.com</div></div>
+    <div class="int"><img src="icons/whatsapp.svg"/><span class="tag">Mensajería</span><h4>WhatsApp Business</h4><p>Notificaciones y atención directo al WhatsApp del cliente.</p><div class="url">business.whatsapp.com</div></div>
+    <div class="int"><img src="icons/googlemaps.svg"/><span class="tag">Ubicación</span><h4>Google Maps</h4><p>Mapas, rutas, rastreo y geolocalización en tiempo real.</p><div class="url">mapsplatform.google.com</div></div>
+    <div class="int"><div class="mono">F</div><span class="tag">Fiscal MX</span><h4>Facturapi</h4><p>Factura electrónica CFDI 4.0 automática, timbrada ante el SAT.</p><div class="url">facturapi.io</div></div>
+    <div class="int"><div class="mono">T</div><span class="tag">Verificación</span><h4>Twilio</h4><p>SMS, verificación por teléfono y mensajería programable.</p><div class="url">twilio.com</div></div>
+    <div class="int"><img src="icons/googlegemini.svg"/><span class="tag">IA</span><h4>Gemini / IA</h4><p>Asistentes, clasificación y análisis inteligente dentro de su app.</p><div class="url">ai.google.dev</div></div>
+    <div class="int"><img src="icons/elevenlabs.svg"/><span class="tag">Voz IA</span><h4>ElevenLabs</h4><p>Voces de inteligencia artificial naturales para asistentes y contenido.</p><div class="url">elevenlabs.io</div></div>
+    <div class="int"><img src="icons/vercel.svg"/><span class="tag">Infraestructura</span><h4>Vercel</h4><p>Hosting de clase mundial, su dominio propio, SSL y velocidad global.</p><div class="url">vercel.com</div></div>
+  </div>
+</div>
+
+<!-- PAGE: CATALOGO 2 -->
+<div class="page">
+  <div class="kick">Catálogo de integraciones · 2 de 2</div>
+  <h2>Viajes, recargas, cripto y verificación.</h2>
+  <p class="lead">Para experiencias de viaje, marketplaces, recompensas y aplicaciones financieras de nueva generación:</p>
+  <div class="intgrid">
+    <div class="int"><div class="mono">D</div><span class="tag">Viajes · Vuelos</span><h4>Duffel</h4><p>Búsqueda y reserva de vuelos de cientos de aerolíneas dentro de su app.</p><div class="url">duffel.com</div></div>
+    <div class="int"><div class="mono">V</div><span class="tag">Viajes · Experiencias</span><h4>Viator</h4><p>Tours y experiencias de viaje en todo el mundo, reservables en su plataforma.</p><div class="url">viator.com</div></div>
+    <div class="int"><div class="mono">R</div><span class="tag">Recargas y Gift Cards</span><h4>Reloadly</h4><p>Recargas telefónicas y tarjetas de regalo digitales en 140+ países.</p><div class="url">reloadly.com</div></div>
+    <div class="int"><div class="mono">TK</div><span class="tag">Cripto · Wallets</span><h4>Turnkey</h4><p>Carteras digitales seguras integradas, sin que el usuario maneje llaves.</p><div class="url">turnkey.com</div></div>
+    <div class="int"><img src="icons/alchemy.svg"/><span class="tag">Cripto · Blockchain</span><h4>Alchemy</h4><p>Infraestructura blockchain de grado institucional para apps Web3.</p><div class="url">alchemy.com</div></div>
+    <div class="int"><div class="mono">LI</div><span class="tag">Cripto · Swaps</span><h4>LI.FI</h4><p>Intercambio de activos digitales entre cadenas, en un solo paso.</p><div class="url">li.fi</div></div>
+    <div class="int"><div class="mono">S</div><span class="tag">KYC · Identidad</span><h4>Sumsub</h4><p>Verificación de identidad y cumplimiento KYC/AML automatizado.</p><div class="url">sumsub.com</div></div>
+    <div class="int"><img src="icons/github.svg"/><span class="tag">Código</span><h4>GitHub</h4><p>Su código versionado, respaldado y auditado — con MCP oficial.</p><div class="url">github.com</div></div>
+    <div class="int"><div class="mono">DS</div><span class="tag">Firma electrónica</span><h4>DocuSign</h4><p>Firma de contratos y documentos con validez legal, desde su app.</p><div class="url">docusign.com</div></div>
+    <div class="int"><div class="mono">🔔</div><span class="tag">Alertas</span><h4>Push Notifications</h4><p>Notificaciones push al teléfono de sus usuarios, como cualquier app grande.</p><div class="url">estándar web · VAPID</div></div>
+    <div class="int"><img src="icons/appstore.svg"/><span class="tag">Distribución</span><h4>App Store</h4><p>Publicación de su app en la tienda oficial de Apple (iOS).</p><div class="url">developer.apple.com</div></div>
+    <div class="int"><img src="icons/googleplay.svg"/><span class="tag">Distribución</span><h4>Google Play</h4><p>Publicación de su app en la tienda oficial de Google (Android).</p><div class="url">play.google.com</div></div>
+  </div>
+</div>
+
+<!-- PAGE: INVERSION -->
+<div class="page">
+  <div class="kick">Inversión</div>
+  <h2>Un precio claro. Pagos por etapa cumplida.</h2>
+  <p class="lead">Usted nunca paga por promesas: paga cuando cada etapa está construida y verificada frente a usted.</p>
+  <div class="price">$12,000 <span style="font-size:11pt;color:#5b6473;font-weight:normal">MXN por aplicación · desarrollo completo</span></div>
+  <br>
+  <div class="stage free"><div><div class="t">Etapa 0 — Demo navegable</div><div class="d">Su app completa en versión demo, instalable en su teléfono. Sin compromiso.</div></div><div class="p">GRATIS</div></div>
+  <div class="stage"><div><div class="t">Etapa 1 — Arranque (a la firma)</div><div class="d">Núcleo real: base de datos, usuarios y panel administrativo.</div></div><div class="p">$4,000</div></div>
+  <div class="stage"><div><div class="t">Etapa 2 — Integraciones</div><div class="d">Pagos, correo, mapas y su catálogo de integraciones, probadas en vivo.</div></div><div class="p">$4,000</div></div>
+  <div class="stage"><div><div class="t">Etapa 3 — Testers y cierre 🎉</div><div class="d">Pruebas con usuarios reales, producción y manual de entrega. ¡Felicidades, su app está terminada!</div></div><div class="p">$4,000</div></div>
+
+  <h2 style="font-size:14pt;margin-top:8mm">¿Quiere subirla a las tiendas?</h2>
+  <p style="font-size:9pt;color:#5b6473;margin-bottom:3mm">Opcional, una vez terminada su app. Sujeto a los tiempos de revisión de Apple y Google.</p>
+  <div class="stores">
+    <div class="store"><img src="icons/appstore.svg"/><div class="p">$5,000</div><b>App Store (iOS)</b><br><small>Cuenta, empaquetado, revisión y publicación. Sujeto a tiempos de Apple.</small></div>
+    <div class="store"><img src="icons/googleplay.svg"/><div class="p">$3,000</div><b>Google Play (Android)</b><br><small>Cuenta, empaquetado, revisión y publicación. Sujeto a tiempos de Google.</small></div>
+  </div>
+
+</div>
+
+<!-- CONTRATO -->
+<div class="page ctr">
+  <h3>CONTRATO DE PRESTACIÓN DE SERVICIOS<br>DESARROLLO DE APLICACIÓN WEB PROGRESIVA (PWA)</h3>
+  <div class="sub">All Global Holding LLC · VMomentum</div>
+
+  <div class="cl"><h5>Declaraciones</h5>
+  <p>En la ciudad de <span class="bl"></span>, a <span class="bl" style="min-width:30mm"></span> de <span class="bl" style="min-width:30mm"></span> de 20<span class="bl" style="min-width:10mm"></span>, las partes que se identifican a continuación celebran el presente contrato de prestación de servicios para el desarrollo de la aplicación web progresiva (PWA) denominada <span class="bl"></span> (en lo sucesivo "LA PLATAFORMA").</p>
+  </div>
+
+  <div class="cl"><h5>A. Del Prestador de Servicios</h5>
+  <p>Comparece el C. <b>LUIS HUMBERTO DE LA TORRE HERRERA</b>, en su carácter de Representante Legal y Delegado Autorizado de <b>ALL GLOBAL HOLDING LLC</b>, sociedad debidamente constituida bajo las leyes del estado de Delaware, Estados Unidos de América, con plena capacidad para celebrar contratos y obligarse en los términos del presente instrumento; en lo sucesivo denominado «EL PRESTADOR». EL PRESTADOR declara contar con la capacidad técnica, recursos humanos y materiales necesarios para llevar
