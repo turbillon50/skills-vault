@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+@page{size:A4;margin:0}
+@page contenido{margin:24mm 16mm 20mm 16mm}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Helvetica,Arial,sans-serif;color:#13203a;font-size:10.5pt;line-height:1.6}
+.page{page:contenido;page-break-after:always}
+.page:last-child{page-break-after:auto}
+.kick{color:#2563eb;font-size:8.5pt;letter-spacing:3px;text-transform:uppercase;font-weight:bold;margin-bottom:3mm}
+h2{font-size:20pt;line-height:1.15;margin-bottom:4mm;color:#0e1b33;border-left:2.5mm solid #2563eb;padding-left:5mm}
+.lead{color:#5b6473;font-size:11pt;margin-bottom:6mm}
+.cover{width:210mm;height:296mm;background:linear-gradient(180deg, rgba(10,16,30,.50) 0%, rgba(10,16,30,.85) 55%, rgba(10,16,30,.97) 100%), url(icons/istore-hero.png) no-repeat center / cover, #0a101e;color:#fff;padding:24mm 20mm;page-break-after:always;position:relative}
+.stripe{position:absolute;top:0;left:0;width:210mm;height:5mm;background:linear-gradient(90deg,#2563eb,#06b6d4)}
+.logo{font-size:26pt;font-weight:bold;letter-spacing:1px}
+.logo span{color:#06b6d4}
+.cover h1{font-size:34pt;line-height:1.1;margin-top:60mm;font-weight:bold}
+.cover .sub{color:#c6cbd6;font-size:12pt;margin-top:6mm;width:150mm}
+.meta{position:absolute;bottom:18mm;left:20mm;color:#9aa3b5;font-size:9pt}
+.badge{display:inline-block;background:linear-gradient(90deg,#2563eb,#06b6d4);color:#fff;border-radius:999px;padding:2mm 6mm;font-size:9pt;font-weight:bold;letter-spacing:1px;margin-top:6mm}
+.row{display:flex;gap:5mm;margin-bottom:5mm}
+.card{flex:1;background:#f7f8fb;border:1px solid #e3e7ef;border-radius:4mm;padding:5.5mm}
+.card h4{font-size:11pt;margin-bottom:1.5mm}
+.card p{font-size:9pt;color:#5b6473}
+.done{display:flex;gap:3mm;padding:2.6mm 0;border-bottom:0.4pt solid #e3e7ef;font-size:10pt}
+.done .ck{color:#059669;font-weight:bold}
+.next .ck{color:#2563eb}
+.dark{background:#0e1b33;color:#eef1f6;border-radius:4mm;padding:6mm;margin:5mm 0}
+.dark h4{color:#7dd3fc;font-size:11pt;margin-bottom:2mm}
+.dark p, .dark li{font-size:9.5pt;color:#c4ccdb}
+.keys{background:#fff;border:1.5pt solid #2563eb;border-radius:4mm;padding:6mm;margin-top:4mm}
+.keys h4{color:#0e1b33;font-size:11.5pt;margin-bottom:2mm}
+.keys ol{padding-left:6mm}
+.keys li{font-size:9.5pt;color:#2c3445;margin-bottom:1.2mm}
+.sec{font-size:8pt;color:#b91c1c;font-weight:bold;letter-spacing:1px}
+.acc{background:linear-gradient(135deg,#0e1b33,#1e3a8a);color:#fff;border-radius:4mm;padding:6mm;margin-top:5mm}
+.acc h4{color:#7dd3fc;margin-bottom:2mm}
+.acc .lk{font-family:monospace;font-size:8.5pt;background:rgba(255,255,255,.12);padding:2mm 3mm;border-radius:2mm;display:block;margin:1.5mm 0;word-break:break-all}
+.acc p,.acc li{font-size:9pt;color:#c4ccdb}
+.pay{background:#ecfdf5;border:1.5pt solid #059669;border-radius:4mm;padding:6mm;margin-top:5mm}
+.pay h4{color:#065f46;font-size:12pt}
+.pay p{font-size:10pt;color:#064e3b}
+.foot{text-align:center;font-size:8.5pt;color:#8a93a6;margin-top:8mm}
+img.band{width:100%;height:52mm;object-fit:cover;border-radius:4mm;margin:4mm 0}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="stripe"></div>
+  <div class="logo">i<span>Store</span></div>
+  <div style="color:#9aa3b5;font-size:9pt;letter-spacing:3px;text-transform:uppercase;margin-top:2mm">Reporte de avance · Junio 2026</div>
+  <h1>Su plataforma está viva.<br>Hoy arranca la Etapa 2.</h1>
+  <p class="sub">Estado del proyecto, accesos de administrador, datos técnicos y el camino a la línea de meta.</p>
+  <span class="badge">i-store.shop · EN PRODUCCIÓN</span>
+  <div class="meta">Preparado por VMomentum · All Global Holding LLC · vmomentums.info</div>
+</div>
+
+<div class="page">
+  <div class="kick">Dónde estamos</div>
+  <h2>Etapa 1 — Núcleo: COMPLETADA ✅</h2>
+  <p class="lead">Su plataforma ya opera en producción con datos reales:</p>
+  <div class="done"><span class="ck">✔</span> Tienda y punto de venta (POS) funcionando con base de datos real: 40 productos, 64 clientes, 60 órdenes de prueba</div>
+  <div class="done"><span class="ck">✔</span> Registro e inicio de sesión seguros (Clerk) con entrada garantizada al panel</div>
+  <div class="done"><span class="ck">✔</span> App instalable (PWA) con navegación móvil nativa: barra inferior, gestos y safe-areas</div>
+  <div class="done"><span class="ck">✔</span> Auditoría de seguridad del checkout: los precios se validan en servidor — nadie puede manipular un cobro</div>
+  <div class="done"><span class="ck">✔</span> Dominio propio i-store.shop con certificado SSL y velocidad global</div>
+  <div class="done"><span class="ck">✔</span> Panel administrativo con KPIs reales del día (ventas, utilidad, movimientos)</div>
+
+  <div class="kick" style="margin-top:7mm">Lo que empieza HOY</div>
+  <h2 style="font-size:15pt">Etapa 2 — Crecimiento</h2>
+  <div class="done next"><span class="ck">▶</span> Modo claro/oscuro completo</div>
+  <div class="done next"><span class="ck">▶</span> Imágenes de producto en todo el catálogo, POS y tienda</div>
+  <div class="done next"><span class="ck">▶</span> Onboarding con dos perfiles: Usuario y Comercio — iStore como tienda principal de su propio marketplace</div>
+  <div class="done next"><span class="ck">▶</span> Modelo multi-tienda: comercios afiliados con suscripción mensual ($300/mes por comercio)</div>
+  <div class="done next"><span class="ck">▶</span> Correos automáticos (bienvenida y órdenes) desde @i-store.shop</div>
+  <div class="done next"><span class="ck">▶</span> Preparación para pasarelas Mercado Pago Connect y Stripe Connect (cobros por tienda)</div>
+</div>
+
+<div class="page">
+  <div class="kick">Su infraestructura</div>
+  <h2>Dónde vive su plataforma</h2>
+  <img class="band" src="icons/istore-hero.png"/>
+  <div class="row">
+    <div class="card"><h4>🌐 Dominio</h4><p>i-store.shop — registrado y verificado, SSL automático.</p></div>
+    <div class="card"><h4>⚡ Despliegue</h4><p>Vercel (infraestructura global). Cada mejora se publica con verificación previa.</p></div>
+    <div class="card"><h4>🗄 Base de datos</h4><p>Neon PostgreSQL serverless con respaldos automáticos. Sus datos, siempre suyos.</p></div>
+  </div>
+  <div class="row">
+    <div class="card"><h4>📦 Código fuente</h4><p>Repositorio Git privado con historial completo de cada cambio, auditable.</p></div>
+    <div class="card"><h4>🔐 Identidad</h4><p>Clerk (estándar bancario) para usuarios y roles.</p></div>
+    <div class="card"><h4>✉️ Correo</h4><p>Resend para correos transaccionales desde su dominio.</p></div>
+  </div>
+
+  <div class="keys">
+    <h4>🔑 Las llaves de su negocio <span class="sec">· SECRETAS · SE ENTREGAN AL LIQUIDAR</span></h4>
+    <p style="font-size:9pt;color:#5b6473;margin-bottom:2mm">Hoy las custodiamos nosotros con cifrado; al liquidar el proyecto se le entregan TODAS en su Manual de Entrega:</p>
+    <ol>
+      <li><b>Dominio</b> — control total de i-store.shop y sus DNS</li>
+      <li><b>Repositorio de código</b> — acceso de propietario en Git</li>
+      <li><b>Base de datos</b> — cadena de conexión y respaldos (Neon)</li>
+      <li><b>Despliegues</b> — cuenta del proyecto en Vercel</li>
+      <li><b>Identidad/usuarios</b> — llaves de Clerk (pública y secreta)</li>
+      <li><b>Correo</b> — llave de Resend del dominio</li>
+      <li><b>Ligas de administración</b> — tokens admin y staff (abajo)</li>
+      <li><b>Pagos</b> — credenciales Mercado Pago / Stripe cuando se activen en Etapa 2-3</li>
+    </ol>
+  </div>
+</div>
+
+<div class="page">
+  <div class="kick">Acceso de administrador</div>
+  <h2>Entre a su panel hoy mismo</h2>
+  <p class="lead">Su acceso funciona con <b>liga-llave</b>: la liga ES la contraseña. Trátela como tal — no la comparta ni la publique.</p>
+  <div class="acc">
+    <h4>👑 ADMINISTRADOR (acceso total)</h4>
+    <span class="lk">https://i-store.shop/adm-AkRJsDpg2fo8EYpNMO1yWjSO3Jb1pPU8</span>
+    <h4 style="margin-top:4mm">👤 STAFF (operación diaria)</h4>
+    <span class="lk">https://i-store.shop/stf-beYFLqfDrO_kabCEpRzSTysF_28JmCLN</span>
+    <p style="margin-top:3mm"><b>Instalarla como app (recomendado):</b></p>
+    <li>iPhone: abrir la liga en Safari → botón Compartir → "Agregar a inicio"</li>
+    <li>Android: abrir la liga en Chrome → menú ⋮ → "Instalar app"</li>
+    <p style="margin-top:2mm">El ícono quedará en su pantalla y abrirá DIRECTO al panel, sin contraseñas, durante 1 año. Si una liga se compromete, la rotamos al instante sin afectar nada más.</p>
+  </div>
+
+  <div class="kick" style="margin-top:7mm">Comunicación constante</div>
+  <p class="lead" style="margin-bottom:3mm">A partir de hoy operamos un <b>esquema fijo de comunicación</b>: cada mejora, error detectado o excedente se le informa por el grupo de WhatsApp y por mensaje directo. Sin silencio, sin sorpresas — usted siempre sabrá en qué va su plataforma.</p>
+
+  <div class="pay">
+    <h4>📅 Siguiente paso del plan</h4>
+    <p>Con la Etapa 1 entregada, hoy inicia la <b>Etapa 2</b>. Conforme a su plan, el siguiente pago programado es de <b>$4,000 MXN</b> (avance: $4,000 de $12,000 cubiertos). Su pago activa los 4 días de construcción intensiva de esta etapa.</p>
+  </div>
+
+  <p class="foot">Gracias por su confianza. Seguimos adelante, directo a la línea de meta. 🏁<br><b>VMomentum</b> · All Global Holding LLC · vmomentums.info</p>
+</div>
+
+</body>
+</html>

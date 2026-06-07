@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+@page{size:A4;margin:0}
+@page contenido{margin:24mm 16mm 20mm 16mm}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Helvetica,Arial,sans-serif;color:#13203a;font-size:10.5pt;line-height:1.6}
+.page{page:contenido;page-break-after:always}
+.page:last-child{page-break-after:auto}
+.kick{color:#FF7A00;font-size:8.5pt;letter-spacing:3px;text-transform:uppercase;font-weight:bold;margin-bottom:3mm}
+h2{font-size:20pt;line-height:1.15;margin-bottom:4mm;color:#0f3778;border-left:2.5mm solid #FF7A00;padding-left:5mm}
+.lead{color:#5b6473;font-size:11pt;margin-bottom:6mm}
+.cover{width:210mm;height:296mm;background:linear-gradient(180deg, rgba(15,25,55,.45) 0%, rgba(15,25,55,.84) 55%, rgba(10,16,38,.97) 100%), url(icons/happy-hero.png) no-repeat center / cover, #0f1937;color:#fff;padding:24mm 20mm;page-break-after:always;position:relative}
+.stripe{position:absolute;top:0;left:0;width:210mm;height:5mm;background:linear-gradient(90deg,#0f3778,#FF7A00)}
+.logo{font-size:26pt;font-weight:bold;letter-spacing:1px}
+.logo span{color:#FF7A00}
+.cover h1{font-size:34pt;line-height:1.1;margin-top:60mm;font-weight:bold}
+.cover .sub{color:#d5d9e4;font-size:12pt;margin-top:6mm;width:150mm}
+.meta{position:absolute;bottom:18mm;left:20mm;color:#aab3c5;font-size:9pt}
+.badge{display:inline-block;background:linear-gradient(90deg,#FF7A00,#ffb25e);color:#1a1206;border-radius:999px;padding:2mm 6mm;font-size:9pt;font-weight:bold;letter-spacing:1px;margin-top:6mm}
+.row{display:flex;gap:5mm;margin-bottom:5mm}
+.card{flex:1;background:#f8f7f4;border:1px solid #e8e4dc;border-radius:4mm;padding:5.5mm}
+.card h4{font-size:11pt;margin-bottom:1.5mm;color:#0f3778}
+.card p{font-size:9pt;color:#5b6473}
+.done{display:flex;gap:3mm;padding:2.6mm 0;border-bottom:0.4pt solid #e8e4dc;font-size:10pt}
+.done .ck{color:#059669;font-weight:bold}
+.next .ck{color:#FF7A00}
+.keys{background:#fff;border:1.5pt solid #0f3778;border-radius:4mm;padding:6mm;margin-top:4mm}
+.keys h4{color:#0f3778;font-size:11.5pt;margin-bottom:2mm}
+.keys ol{padding-left:6mm}
+.keys li{font-size:9.5pt;color:#2c3445;margin-bottom:1.2mm}
+.sec{font-size:8pt;color:#b91c1c;font-weight:bold;letter-spacing:1px}
+.acc{background:linear-gradient(135deg,#0f3778,#1d4ed8);color:#fff;border-radius:4mm;padding:6mm;margin-top:5mm}
+.acc h4{color:#ffb25e;margin-bottom:2mm}
+.acc .lk{font-family:monospace;font-size:8pt;background:rgba(255,255,255,.12);padding:2mm 3mm;border-radius:2mm;display:block;margin:1.5mm 0;word-break:break-all}
+.acc p,.acc li{font-size:9pt;color:#d7defc}
+.pay{background:#fff7ed;border:1.5pt solid #FF7A00;border-radius:4mm;padding:6mm;margin-top:5mm}
+.pay h4{color:#9a3412;font-size:12pt}
+.pay p{font-size:10pt;color:#7c2d12}
+.foot{text-align:center;font-size:8.5pt;color:#8a93a6;margin-top:8mm}
+img.band{width:100%;height:48mm;object-fit:cover;border-radius:4mm;margin:4mm 0}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="stripe"></div>
+  <div class="logo">Happy<span>toc</span></div>
+  <div style="color:#aab3c5;font-size:9pt;letter-spacing:3px;text-transform:uppercase;margin-top:2mm">Reporte de avance · Junio 2026</div>
+  <h1>Su app ya acompaña.<br>Hoy arranca la Etapa 2.</h1>
+  <p class="sub">Estado del proyecto, su acceso de administrador, datos técnicos y el camino a la línea de meta.</p>
+  <span class="badge">happytoc.life · EN PRODUCCIÓN</span>
+  <div class="meta">Preparado por VMomentum · All Global Holding LLC · vmomentums.info</div>
+</div>
+
+<div class="page">
+  <div class="kick">Dónde estamos</div>
+  <h2>Etapa 1 — Núcleo: COMPLETADA ✅</h2>
+  <p class="lead">Happytoc vive en producción con experiencia de app real:</p>
+  <div class="done"><span class="ck">✔</span> App completa funcionando: dashboard, hábitos, metas, finanzas, rueda de la vida, numerología y agenda — todo con datos reales en la nube</div>
+  <div class="done"><span class="ck">✔</span> Calendario premium nuevo: tareas y objetivos con colores por categoría, estados y barra de progreso, vista mes y semana</div>
+  <div class="done"><span class="ck">✔</span> Modo claro/oscuro/automático en toda la app</div>
+  <div class="done"><span class="ck">✔</span> Sugerencias inteligentes accionables en el perfil: un toque crea el hábito o la meta</div>
+  <div class="done"><span class="ck">✔</span> App instalable (PWA) con el ícono de marca Happytoc (brújula azul+naranja)</div>
+  <div class="done"><span class="ck">✔</span> Registro e inicio de sesión seguros con entrada directa al dashboard</div>
+  <div class="done"><span class="ck">✔</span> Panel administrativo operable: usuarios, energías (11 sembradas y editables), lunas y agenda</div>
+
+  <div class="kick" style="margin-top:7mm">Lo que empieza HOY</div>
+  <h2 style="font-size:15pt">Etapa 2 — Crecimiento</h2>
+  <div class="done next"><span class="ck">▶</span> Notificaciones push al teléfono (recordatorios de hábitos y rachas)</div>
+  <div class="done next"><span class="ck">▶</span> Contenido vivo del panel: energías del día, fases lunares y mensajes editables sin tocar código</div>
+  <div class="done next"><span class="ck">▶</span> Correos automáticos de bienvenida y resumen semanal</div>
+  <div class="done next"><span class="ck">▶</span> Refinamiento continuo de experiencia con sus comentarios</div>
+</div>
+
+<div class="page">
+  <div class="kick">Su infraestructura</div>
+  <h2>Dónde vive su plataforma</h2>
+  <img class="band" src="icons/happy-hero.png"/>
+  <div class="row">
+    <div class="card"><h4>🌐 Dominio</h4><p>happytoc.life — registrado y verificado, SSL automático.</p></div>
+    <div class="card"><h4>⚡ Despliegue</h4><p>Vercel (infraestructura global). Cada mejora se publica verificada.</p></div>
+    <div class="card"><h4>🗄 Base de datos</h4><p>Neon PostgreSQL serverless: 13 tablas con respaldos automáticos.</p></div>
+  </div>
+  <div class="row">
+    <div class="card"><h4>📦 Código fuente</h4><p>Repositorio Git privado con historial auditable de cada cambio.</p></div>
+    <div class="card"><h4>🔐 Identidad</h4><p>Clerk (estándar bancario) para usuarios.</p></div>
+    <div class="card"><h4>✉️ Correo</h4><p>Resend para los correos del dominio (Etapa 2).</p></div>
+  </div>
+
+  <div class="keys">
+    <h4>🔑 Las llaves de su negocio <span class="sec">· SECRETAS · SE ENTREGAN AL LIQUIDAR</span></h4>
+    <p style="font-size:9pt;color:#5b6473;margin-bottom:2mm">Hoy las custodiamos nosotros con cifrado; al liquidar el proyecto se le entregan TODAS en su Manual de Entrega:</p>
+    <ol>
+      <li><b>Dominio</b> — control total de happytoc.life y sus DNS</li>
+      <li><b>Repositorio de código</b> — acceso de propietario en Git</li>
+      <li><b>Base de datos</b> — cadena de conexión y respaldos (Neon)</li>
+      <li><b>Despliegues</b> — cuenta del proyecto en Vercel</li>
+      <li><b>Identidad/usuarios</b> — llaves de Clerk (pública y secreta)</li>
+      <li><b>Correo</b> — llave de Resend del dominio</li>
+      <li><b>Liga de administración</b> — llave de acceso al panel (abajo)</li>
+      <li><b>Notificaciones push</b> — llaves VAPID cuando se activen en Etapa 2</li>
+    </ol>
+  </div>
+</div>
+
+<div class="page">
+  <div class="kick">Acceso de administrador</div>
+  <h2>Entre a su panel hoy mismo</h2>
+  <p class="lead">Su acceso funciona con <b>liga-llave</b>: la liga ES la contraseña. Trátela como tal — no la comparta ni la publique.</p>
+  <div class="acc">
+    <h4>👑 ADMINISTRADOR (control total del panel)</h4>
+    <span class="lk">https://happytoc.life/f89a4dbf2ec9e7411bd93d98271972180d2d216e3da34ec7f9f67a7f869a33e8</span>
+    <p style="margin-top:3mm"><b>Instalarla como app (recomendado):</b></p>
+    <li>iPhone: abrir la liga en Safari → botón Compartir → "Añadir a pantalla de inicio" → ícono "Happy Admin"</li>
+    <li>Android: abrir la liga en Chrome → menú ⋮ → "Instalar app"</li>
+    <p style="margin-top:2mm">El ícono abre DIRECTO al panel, sin contraseñas, durante 1 año en ese dispositivo. Si la liga se compromete, la rotamos al instante.</p>
+  </div>
+
+  <div class="kick" style="margin-top:7mm">Comunicación constante</div>
+  <p class="lead" style="margin-bottom:3mm">A partir de hoy operamos un <b>esquema fijo de comunicación</b>: cada mejora, error detectado o excedente se le informa por el grupo de WhatsApp y por mensaje directo. Sin silencio, sin sorpresas — usted siempre sabrá en qué va su plataforma.</p>
+
+  <div class="pay">
+    <h4>📅 Siguiente paso del plan</h4>
+    <p>Con la Etapa 1 entregada, hoy inicia la <b>Etapa 2</b>. Conforme a su plan, el siguiente pago programado es de <b>$4,000 MXN</b> (avance: $4,000 de $12,000 cubiertos). Su pago activa los 4 días de construcción intensiva de esta etapa.</p>
+  </div>
+
+  <p class="foot">Gracias por su confianza. Seguimos adelante, directo a la línea de meta. 🏁<br><b>VMomentum</b> · All Global Holding LLC · vmomentums.info</p>
+</div>
+
+</body>
+</html>
