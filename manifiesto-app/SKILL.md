@@ -42,3 +42,5 @@ Hero cinematografico · Splash screen · Dark mode · Mobile first · Tablet · 
 Gate operativo: (1) screenshot movil 390px del flujo principal; (2) scroll test header/footer fijos; (3) cero errores visibles; (4) las 3 EVIDENCIAS de vforge-method (visual + funcional + operativa en produccion); (5) si algo falla → iterar, no reportar "listo". Documentar cierre en brain (cierre-<app>).
 
 Reglas de proceso: un ejecutor por repo; commits con la cuenta del team de Vercel; rollback si algo rompe; ver-logs antes de adivinar.
+
+B16. NAVEGACION ABIERTA (regla Airbnb — obligatoria en TODA app que vende algo): el visitante SIN cuenta recorre, ve y explora libremente el catalogo/oferta (productos, servicios, eventos, planes) desde la home. El registro/login se pide SOLO al momento de actuar (comprar, reservar, contratar, guardar). PROHIBIDO: home que redirige a login/admin, catalogos cerrados, paywalls de exploracion. El modo admin va exclusivamente por su liga especial y NUNCA secuestra la home. Aplica a iStore, Yerro, LN RED, CSN, Decaciones, Tortillap, Hakapoke y toda app comercial del ecosistema. (Definida por Luis 8 jun 2026: 'si no, es tonto pensar en como vender'.)
