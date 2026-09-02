@@ -1,4 +1,4 @@
-# DOCTRINA VULCANO v6.0 — 02-sep-2026
+# DOCTRINA VULCANO v6.1 — 02-sep-2026
 
 Este es el ÚNICO documento que manda. Vive en /root/skills-vault/DOCTRINA.md (Git).
 Todo lo demás (CLAUDE.md, boot-context, semilla, MAESTRO, memorias de arranque) es copia o puntero a este archivo.
@@ -43,7 +43,7 @@ Un job no engendra auditorías de sí mismo. Los barridos de higiene son SQL en 
 - Datos de apps de cliente (vl_*, istore_*, eternime_*) NO pertenecen al Brain: cada app su propia base Neon. Lo que ya está adentro se migra cuando toque ese proyecto, no antes.
 - Una lección se guarda solo cuando hubo RECHAZADO con causa raíz. Nada de "acierto" automático.
 - Crons de "aprendizaje" (learning_loop, nervous, predictor, noche, sleep_rem, knowledge_graph): BORRADOS 02-sep-2026. No se recrean sin que Luis lo pida por escrito.
-- Al arrancar Vulcano lee: este archivo + panel de estado. No seis memorias.
+- Al arrancar Vulcano lee: este archivo + https://estado.vforge.site/linea.txt. No seis memorias.
 
 ## 6. Las reglas que ya costaron caro
 1. Medir antes de afirmar. Nada de "ya quedó" sin números. Nada de "no puedo" sin intentarlo.
@@ -63,8 +63,8 @@ Un job no engendra auditorías de sí mismo. Los barridos de higiene son SQL en 
 - Brain: Neon, SQL de escritura con /root/vulcano-audit/run.sh archivo.sql. Lectura: brain_query.
 - MCPs en 172.18.0.1: 12010 brain · 12011 web · 12012 github · 12013 vercel · 12014 neon · 12015 hetzner-executor · 8089 mesh. Salud: initialize → 400 sano, 000 muerto, 401 falta token.
 - MetaMCP docker :12008, postgres :9433. Conectores: VULCANO (infra) y MCIGW (apps, Composio). mesh y qa-vulcano NO se conectan.
-- Skills: /root/skills-vault, corredor verificar-todas.sh cada 6 h.
-- Tokens muertos conocidos: LinkedIn directo, VERCEL_TOKEN de /root/.env. Vía viva: Composio y el MCP local de Vercel.
+- Skills: /root/skills-vault, corredor verificar-todas.sh cada 6 h. WebKit vive en /root/.cache/ms-playwright; PLAYWRIGHT_SKIP_BROWSER_GC=1 está en /etc/environment y systemd porque `playwright install` de otra versión borra los navegadores ajenos (pasó 02-sep). No quitar.
+- Tokens: LinkedIn directo MUERTO (vía viva: Composio). VERCEL_TOKEN, GITHUB_TOKEN y NEON_API_KEY de /root/.env VIVOS (probados 02-sep). Los muertos quedan comentados en /root/.env con fecha, no se borran.
 - Disco: worktrees > 7 días se borran por cron. node_modules de proyectos parados se borran sin preguntar.
 
 ## 8. Los 8 proyectos con dinero (el resto es inventario)
