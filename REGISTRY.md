@@ -1,6 +1,6 @@
 # Skill Registry — All Global Holding
 
-Última actualización: 2025-06-02
+Última actualización: 2026-09-13
 
 | # | Skill | v | Qué hace | Agentes | Trigger principal |
 |---|---|---|---|---|---|
@@ -13,6 +13,7 @@
 | 7 | `skill-loader` | 1.0 | Inyecta skills en cualquier chat/agente | Todos | "carga skill", "sync skills" |
 | 8 | `luis-collaboration` | 1.0 | Tono, patrones técnicos, contexto Luis | Chat | Siempre activa |
 | 9 | `content-engine` | 1.0 | Contenido multi-plataforma | Chat, Code | "post", "contenido", "campaña" |
+| 10 | `vliving-media-ingest` | 1.0 | Drive público → validación/optimización → Hetzner S3 → galería/portada Neon → QA producción | Chat, Code, Dispatch | "sube estas fotos", "carpeta Drive", "galería propiedad" |
 
 ## Dependencias entre skills
 
@@ -31,7 +32,9 @@ turbo-boot ← arranca primero, indexa todas las demás
     │
     ├── demo-screens ← demos rápidas
     │
-    └── demo-pwa-builder ← demos completas
+    ├── demo-pwa-builder ← demos completas
+    │
+    └── vliving-media-ingest ← ingesta verificable de fotos V&LIVING
 ```
 
 ## Prioridad de ejecución
@@ -45,4 +48,5 @@ turbo-boot ← arranca primero, indexa todas las demás
 
 | Fecha | Cambio |
 |---|---|
+| 2026-09-13 | Agregada `vliving-media-ingest` para cerrar el puente de galerías desde Drive a producción |
 | 2025-06-02 | Vault creado con 9 skills iniciales |
