@@ -1,8 +1,8 @@
 ---
 name: pwa-agencia-premium
-description: Protocolo de calidad agencia premium para PWAs de Luis (V·Momentum). Cómo se producen, adecúan (celular → escritorio), implementan y verifican piezas visuales de marca (carga/splash, ícono, símbolo, animaciones, efectos cristal) con Higgsfield por CLI y Next.js. ACTIVAR cuando se construya o retoque cualquier pantalla de producto propio o de cliente que deba verse "de agencia", cuando se hable de splash, pantalla de carga, ícono de app, head kit, animación de marca, o cuando Luis diga "calidad agencia", "premium", "4k", "que corra solo", "adecúalo a computadora".
-version: 1.0
-fecha: 2026-09-22
+description: Protocolo de calidad agencia premium para PWAs de Luis (V·Momentum). Cómo se producen, adecúan (celular → escritorio), implementan y verifican piezas visuales de marca (carga/splash, ícono, símbolo, animaciones, efectos cristal) con Higgsfield por CLI y Next.js. ACTIVAR cuando se prepare la ficha o el empaque de Google Play, cuando se defina o audite la paleta de color, cuando se construya o retoque cualquier pantalla de producto propio o de cliente que deba verse "de agencia", cuando se hable de splash, pantalla de carga, ícono de app, head kit, animación de marca, o cuando Luis diga "calidad agencia", "premium", "4k", "que corra solo", "adecúalo a computadora".
+version: 2.0
+fecha: 2026-09-24
 origen: Carga de Momentum (vmomentum.site), sesión 22-sep-2026
 ---
 
@@ -127,3 +127,51 @@ carga:master` despliega en Vercel. Todo en `setsid nohup script > log &` con sen
 - [ ] Cableado intacto (Clerk/Neon/Stripe/APIs) — nada del `app/api`, `lib`, `proxy.ts` tocado
 - [ ] Reporte a Luis: qué, con qué modelo, a qué resolución, y qué NO quedó
 
+
+## 8. Color: el sistema que no se rompe (v2, 24-sep-2026)
+
+Lección de Momentum: verde "de éxito", azul de pestaña y lila de chips se colaron desde componentes
+genéricos y Luis los vio en su iPhone. Regla:
+1. **Paleta cerrada en tokens** (`:root`): `--marca` (+ `--marca-600/700` para hover/presionado),
+   `--marca-suave` (fondos 6–10%), `--tinta`, `--tinta-2`, `--tinta-3`, `--papel`, `--papel-2`, `--linea`,
+   y SOLO dos semánticos: `--peligro` (rojo para borrar/errores) y `--aviso` (ámbar). **No existe `--exito` verde**:
+   "bien/completado/disponible" = `--marca` o gris con palomita.
+2. Cero colores literales en componentes: `git grep -nE '#[0-9a-fA-F]{3,6}|rgb\(' app components` solo puede
+   apuntar a `globals.css`. Prueba automática que falle si aparece un hex fuera de tokens.
+3. Excepciones con nombre y justificación: botón WhatsApp (verde oficial), logos de terceros.
+4. Contraste AA (4.5:1 texto, 3:1 íconos) medido, no a ojo; naranja sobre blanco solo en ≥18 px o bold.
+5. Siempre claro salvo marca oscura aprobada; nada de modo oscuro automático que invente colores.
+6. Ícono, splash, favicon, capturas de tienda y gráficos salen de la MISMA paleta.
+
+## 9. Google Play: piezas de ficha con calidad agencia (v2)
+
+Todo se produce desde la marca aprobada y se MIRA antes de subir. Carpeta: `store/play/` en el repo.
+
+| Pieza | Medida exacta | Cómo se hace |
+|---|---|---|
+| Ícono de la ficha | 512×512 PNG 32 bits, sin transparencia en esquinas (Play redondea) | Del ícono 4k (gpt_image_2) con PIL LANCZOS; símbolo + wordmark si cabe legible, si no solo símbolo |
+| Ícono adaptativo (app) | capa frontal 432×432 con zona segura 264×264 + fondo sólido `--marca` | Símbolo SOLO (sin wordmark) centrado en la zona segura; probar máscara círculo, squircle, gota |
+| Favicon / 16–48 | ico multi-tamaño | SOLO símbolo; el wordmark a 16 px es una mancha |
+| Gráfico destacado | 1024×500 JPG/PNG sin transparencia | gpt_image_2 16:9 4k con la referencia de marca → recorte 1024×500; nada de texto crítico en los bordes (Play lo tapa con el botón de play si hay video) |
+| Capturas de teléfono | 8 × 1080×1920 (9:16), reales de producción | WebKit 1080×1920 @dpr1 o 360×640 @dpr3 con datos reales (no zz); marco opcional + titular corto arriba en la tipografía de marca, fondo `--marca-suave`; orden: valor principal → explorar → ficha → publicar → cuenta → confianza (legal/privacidad) |
+| Capturas tablet (opcional) | 7" 1200×1920 y 10" 1600×2560 | Mismo guion; mejora el ranking si la app se ve bien en tablet |
+| Video promo (opcional) | YouTube, 30 s | HyperFrames con capturas reales + splash; sin música con derechos |
+
+Textos de ficha (español México): título ≤30, descripción corta ≤80, larga ≤4000 sin mayúsculas gritonas ni
+emojis de relleno, sin promesas de dinero; categoría, correo de soporte, URL de privacidad, URL de
+eliminación de cuenta. Cuestionarios: Seguridad de los datos (qué se recopila, para qué, si se comparte,
+cifrado en tránsito, cómo borrar) y clasificación IARC. Todo prellenado en `STORES-CHECKLIST.md`.
+
+Empaque TWA (Bubblewrap): `twa-manifest.json` con `packageId`, `themeColor`/`navigationColor` = `--marca`
+o `--papel`, `backgroundColor` = color del splash, `enableNotifications: true`, `fallbackType: customtabs`,
+ícono adaptativo y monocromático (Android 13). `assetlinks.json` con la SHA-256 de la llave de subida Y la
+de firma de Play (App Signing). La llave `.keystore` se respalda fuera de git (chmod 600) y en el Brain solo
+su ruta. Verificación: instalar el APK en un emulador/dispositivo, que abra SIN barra de URL (si aparece,
+assetlinks está mal) y que el splash nativo use el color de marca.
+
+Checklist Play (se suma al §7):
+- [ ] Paleta cerrada, prueba de hex en verde, contraste AA medido
+- [ ] Ícono 512, adaptativo con máscaras probadas, favicon solo símbolo
+- [ ] Gráfico 1024×500 y 8 capturas 1080×1920 reales, mirados en un teléfono
+- [ ] Textos y cuestionarios prellenados; URLs de privacidad, soporte y eliminación en 200
+- [ ] AAB firmado, llave respaldada, assetlinks con ambas huellas, app sin barra de URL
