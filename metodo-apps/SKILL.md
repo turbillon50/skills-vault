@@ -132,3 +132,5 @@ doble confirmación · **Bitácora de auditoría** de toda acción · 404 para q
 - Las rutas: 200 o redirección correcta; 0 desbordes; 0 errores de consola; 0 respuestas 500.
 - Contraprueba: correr a mano un caso que DEBE fallar para comprobar que la prueba reprueba.
 - Mirar cada captura. Si Luis manda una captura de su iPhone, se toma como verdad por encima de las nuestras.
+
+**Auditoría obligatoria:** toda app se audita contra `MUST-500.md` (esta carpeta): 500 obviedades verificables; los [Regresión] se prueban siempre. Resultado en `MUST-500-<app>.md` con evidencia.
