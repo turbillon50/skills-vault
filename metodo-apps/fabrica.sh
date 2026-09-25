@@ -21,6 +21,11 @@ $PIDIO
 2. Estándares vivos: \`curl\`/Brain (memorias del proyecto) y el README del repo.
 3. Si MODO=rescate: ejecuta §2 del método y escribe \`RESCATE.md\` ANTES de cambiar nada.
 
+## Las 7 lentes (\`$V/metodo-apps/LENTES.md\`)
+- MODO=nuevo: pasa las lentes 1→5 ANTES de programar y deja su salida en \`LISTA.md\`, \`COPY.md\` y \`motion.css\`; la 6 con la app en producción; la 7 al cerrar (\`LANZAMIENTO.md\`).
+- MODO=rescate: \`RESCATE.md\` → lente 6 sobre lo que hay → 1→5 solo sobre lo que se decidió rehacer → 7 al cerrar.
+- Una lente que solo produjo prosa no cuenta: cada una termina en renglones con criterio medible.
+
 ## Cómo trabajas
 - Sigues el método §3→§7 en orden. Fuente de verdad: \`LISTA.md\` (en la raíz); [x] solo con ruta en producción + captura WebKit MIRADA; [LUIS] lo que solo él puede hacer.
 - Push al cerrar cada bloque. Al terminar la lista, re-auditas la app completa y agregas lo nuevo.

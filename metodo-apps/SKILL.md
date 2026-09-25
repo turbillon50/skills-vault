@@ -1,10 +1,10 @@
 ---
 name: metodo-apps
 description: Método único de Luis para CONSTRUIR una app nueva o RESCATAR una existente con calidad agencia (Higgsfield 4k) — del splash de carga al intro, onboarding, producto, cuenta, admin, tiendas y el loop de agentes que no para hasta la lista en verde. ACTIVAR al arrancar cualquier app o rescate, o cuando Luis diga "hazlo con el método", "rescátala", "que quede como Momentum", "calidad Higgsfield", "súbela a las stores".
-version: 1.0
+version: 1.1
 fecha: 2026-09-24
 origen: Momentum (vmomentum.site) M4–M8, VForge, Identy-Kit, VanDeFi, Goossip — sep-2026
-complementa: pwa-agencia-premium (piezas de marca 4k), pwa-checklist, vulcano-design-protocol, contrato-pwa
+complementa: LENTES.md (las 7 lentes), pwa-agencia-premium (piezas de marca 4k), pwa-checklist, vulcano-design-protocol, contrato-pwa
 ---
 
 # Método de apps — construir y rescatar
@@ -134,3 +134,12 @@ doble confirmación · **Bitácora de auditoría** de toda acción · 404 para q
 - Mirar cada captura. Si Luis manda una captura de su iPhone, se toma como verdad por encima de las nuestras.
 
 **Auditoría obligatoria:** toda app se audita contra `MUST-500.md` (esta carpeta): 500 obviedades verificables; los [Regresión] se prueban siempre. Resultado en `MUST-500-<app>.md` con evidencia.
+
+## 10. Las 7 lentes (`LENTES.md`)
+
+Antes de programar una app nueva se pasan las lentes 1–5 (plano, hero, movimiento, redacción, plan de
+construcción); con la app en producción, la 6 (auditoría de conversión: fricciones por impacto, 3 cambios,
+métrica que lo prueba); al cerrar el loop, la 7 (plan de lanzamiento de 30 días con experimentos y criterio de
+parar). En rescate: `RESCATE.md` → lente 6 sobre lo que hay → 1–5 solo sobre lo que se rehace → 7. Cada lente
+termina en renglones de `LISTA.md` con criterio medible; prosa sola no cuenta. Las lentes no inventan marca
+(la de Luis es la ley) ni datos (testimonios, cifras, logos).
