@@ -99,6 +99,18 @@ Se corre con `node qa/sanidad.mjs [--solo P-042] [--sin-sesion] [--rapido]`. Hac
   aviso y regreso al mismo lugar.
 - R-010 Botón con `pointer-events: none` heredado o tapado por una barra fija → no se puede tocar. El corredor
   detecta `MUERTO` y `elementFromPoint` ≠ el botón.
+- R-011 Texto encimado. Tres causas medidas en Momentum (25-sep): (a) una decoración de tamaño fijo
+  (pastilla de 1/n) sobre elementos que miden según su texto (`grid-auto-columns: 1fr` = `minmax(auto,1fr)`
+  crece con `nowrap`); (b) sellos en posición absoluta que chocan cuando la tarjeta se angosta (rejilla de 4
+  columnas en una columna de 780 px); (c) textos más largos en otro idioma o con otra fuente (iOS). Regla: lo
+  que marca un elemento activo es fondo DEL elemento, no una pieza aparte con ancho calculado; tarjetas con
+  ancho mínimo; `minmax(0,1fr)` + texto que se adapta. El corredor mide pares de textos visibles (cajas de
+  Range recortadas por overflow, misma capa, sin `details` cerrados) que se crucen > 12 px² en 390 y 1440,
+  ES y EN (`qa/vul-encimados.mjs` en Momentum).
+- R-012 Dos fuentes para el mismo dato. La foto salía bien en Mi espacio y como ícono de GitHub en Explorar
+  porque una pantalla leía la base y otra el proveedor de login. Un dato visible = UNA función que lo lee,
+  en el mismo orden de prioridad (lo que subió la persona → base → proveedor). Prueba: sube una foto con
+  `zz-prueba` y compárala en header, tab bar, perfil público, tarjeta y ficha.
 
 ## 5. Qué hace el agente cuando el corredor marca rojo
 
