@@ -567,3 +567,10 @@ Cómo usarla: el agente de QA recorre cada ítem en producción (celular primero
 498. Un smoke test de Playwright recorre login, perfil, crear proyecto y enviar mensaje tras cada deploy.
 499. Tras cada deploy se revisan los logs 30 min y no hay 5xx nuevos.
 500. Esta lista completa se corre antes de cada subida a tiendas y cada versión mayor.
+
+### 23. Diálogos y hojas (aprendido en Momentum, 25-sep-2026) [Regresión]
+501. Ningún ancestro de un diálogo `position: fixed` tiene `transform`, `filter`, `perspective`, `contain: paint|layout` ni `will-change: transform`, tampoco como residuo de una animación con `fill: both`. Prueba: abrir cada diálogo y comprobar que su caja queda dentro del viewport (0 ≤ y < innerHeight) y que `getBoundingClientRect().height` del overlay = innerHeight.
+502. Un fondo con `backdrop-filter` no anima opacidad (WebKit deja de pintar a sus hijos); la animación va en la caja interior. Prueba en WebKit: al abrir, la caja tiene `opacity` 1 y al menos un botón visible.
+503. No existe ninguna regla `body > *` / `body:has(...) > *` que fije `position`; los portales al body (recortadores, modales del proveedor de auth) conservan `position: fixed` computado.
+504. Todo diálogo se cierra con Escape, con su botón Cerrar y tocando el fondo, y devuelve el foco al disparador.
+505. Todo diálogo se mide en un barrido automático (`qa/*-dialogos.mjs`) con sesión, en 390 y 1440, antes de subir; un diálogo sin prueba no se sube.
