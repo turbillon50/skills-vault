@@ -574,3 +574,10 @@ Cómo usarla: el agente de QA recorre cada ítem en producción (celular primero
 503. No existe ninguna regla `body > *` / `body:has(...) > *` que fije `position`; los portales al body (recortadores, modales del proveedor de auth) conservan `position: fixed` computado.
 504. Todo diálogo se cierra con Escape, con su botón Cerrar y tocando el fondo, y devuelve el foco al disparador.
 505. Todo diálogo se mide en un barrido automático (`qa/*-dialogos.mjs`) con sesión, en 390 y 1440, antes de subir; un diálogo sin prueba no se sube.
+
+### 24. Promesas y consecuencias (Protocolo de Sanidad, `SANIDAD.md`) [Regresión]
+506. Existe `PROMESAS.md` con TODO elemento interactivo de la app (id, pantalla, texto, requiere sesión, promesa, consecuencia, prueba); el corredor falla con `SIN PROMESA` si aparece uno nuevo.
+507. Existe `qa/sanidad.mjs` que toca cada elemento interactivo con y sin sesión y no reporta ningún `MUERTO` (sin efecto observable en 1.5 s), `ERROR` (consola o red ≥ 400) ni `FUERA` (diálogo fuera del viewport).
+508. Cada acción con consecuencia (guardar, seguir, contactar, reportar, bloquear, publicar, pausar, eliminar) se verifica en el lugar donde vive la consecuencia (otra pantalla, base, correo), no solo en el toast.
+509. El corredor corre en modo rápido tras cada deploy y completo cada noche; los resultados quedan en `sanidad_corridas` y se ven en `/admin/sanidad`.
+510. Toda corrida 100 % verde se contraprueba rompiendo algo a propósito; cada bug arreglado deja una regresión `R-nnn` con la medición que lo detecta.

@@ -4,7 +4,7 @@ description: Método único de Luis para CONSTRUIR una app nueva o RESCATAR una 
 version: 1.1
 fecha: 2026-09-24
 origen: Momentum (vmomentum.site) M4–M8, VForge, Identy-Kit, VanDeFi, Goossip — sep-2026
-complementa: LENTES.md (las 7 lentes), pwa-agencia-premium (piezas de marca 4k), pwa-checklist, vulcano-design-protocol, contrato-pwa
+complementa: SANIDAD.md (protocolo anti-bugs), LENTES.md (las 7 lentes), pwa-agencia-premium (piezas de marca 4k), pwa-checklist, vulcano-design-protocol, contrato-pwa
 ---
 
 # Método de apps — construir y rescatar
@@ -143,3 +143,12 @@ métrica que lo prueba); al cerrar el loop, la 7 (plan de lanzamiento de 30 día
 parar). En rescate: `RESCATE.md` → lente 6 sobre lo que hay → 1–5 solo sobre lo que se rehace → 7. Cada lente
 termina en renglones de `LISTA.md` con criterio medible; prosa sola no cuenta. Las lentes no inventan marca
 (la de Luis es la ley) ni datos (testimonios, cifras, logos).
+
+## 11. Sanidad: cada botón hace lo que dice (`SANIDAD.md`)
+
+Cada elemento interactivo es una promesa escrita en `PROMESAS.md` con su consecuencia y su prueba. El
+corredor `qa/sanidad.mjs` toca todo con y sin sesión (veredictos NAVEGA/CAMBIA/PIDE/DIALOGO/MUERTO/ERROR/
+FUERA), verifica las consecuencias donde viven, mide los diálogos, y corre las regresiones R-001…R-010
+(las causas de "app pasmada" ya medidas). Corre rápido tras cada deploy y completo cada noche; resultados
+en `sanidad_corridas` y `/admin/sanidad`. Ningún botón nuevo sin promesa y prueba; ningún bug cerrado sin
+regresión; ningún verde sin contraprueba. La lista maestra gana la sección S (S1–S6).

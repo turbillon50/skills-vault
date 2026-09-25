@@ -61,3 +61,11 @@ Regla: el agente marca [x] SOLO con evidencia (ruta en producción 200 + captura
 - [ ] H8 [LUIS] Subir el AAB a prueba interna → cerrada (Play exige 12 testers 14 días en cuentas personales nuevas; con cuenta de organización no)
 ## I. Apple (EN PAUSA por Luis)
 - [ ] I1 Código de Sign in with Apple listo, sin activar
+
+## S · Sanidad (SANIDAD.md)
+- [ ] S1 `PROMESAS.md` completo (0 SIN PROMESA)
+- [ ] S2 `qa/sanidad.mjs` con toque de todo, diálogos, estados y R-001…R-010; contraprueba anotada
+- [ ] S3 Promesas con consecuencia verificadas de punta a punta con zz
+- [ ] S4 Corrida completa 390/1440 con y sin sesión: 0 rojos
+- [ ] S5 Rápida tras cada deploy + nocturno + `sanidad_corridas` + `/admin/sanidad`
+- [ ] S6 3 noches seguidas en verde antes de tiendas
